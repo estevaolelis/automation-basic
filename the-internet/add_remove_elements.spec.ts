@@ -1,9 +1,22 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('Validate heading from A/B link', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/');
+test("Validate adding element and deleting element", async ({ page }) => {
+  let times = 3
 
-  await page.getByRole("link", { name: "A/B Testing"}).click()
+  await page.goto("https://the-internet.herokuapp.com/");
+  await page.getByRole("link", { name: "Add/Remove Elements" }).click();
 
-  await expect(page.getByRole("heading", { name: "A/B Test Control"})).toBeVisible();
+  const addButtons = page.getByRole("button", { name: "Add Element" });
+  for (let i = 0; i < times; i++) {
+    await addButtons.click()
+  }
+
+  const deleteButtons = page.getByRole("button", { name: "Delete"})
+  await expect(deleteButtons).toHaveCount(times)
+
+  for (let i = 0; i < times; i++) {
+    await deleteButtons.first().click()
+  }
+
+  await expect(deleteButtons).toHaveCount(0);
 });
