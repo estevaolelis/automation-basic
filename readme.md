@@ -122,5 +122,5 @@ npx playwright show-report
 
 Estevao Lelis Florentino de Paula
 
-- LinkedIn: https://linkedin.com/in/your-profile
-- GitHub: https://github.com/your-username
+- LinkedIn: https://linkedin.com/in/estevaolelis/
+- GitHub: https://github.com/estevaolelis
