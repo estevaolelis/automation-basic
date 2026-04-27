@@ -20,6 +20,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
       env: 
+        BASE_URL: https://the-internet.herokuapp.com
         USER_AUTH: ${{ secrets.USER_AUTH}}
         PASS_AUTH: ${{ secrets.PASS_AUTH}}
     - uses: actions/upload-artifact@v4
