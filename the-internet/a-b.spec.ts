@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Validate heading from A/B link', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/');
+  await page.goto("/");
 
   await page.getByRole("link", { name: "A/B Testing"}).click()
 

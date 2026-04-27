@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("Validadate how many broken images", async ({ page }) => {
-  await page.goto("https://the-internet.herokuapp.com/");
+  await page.goto("/");
   await page.getByRole("link", { name: "Broken Images" }).click();
 
   const images = page.locator("img")

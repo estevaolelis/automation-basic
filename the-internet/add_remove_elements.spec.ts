@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("Validate adding element and deleting element", async ({ page }) => {
   let times = 3
 
-  await page.goto("https://the-internet.herokuapp.com/");
+  await page.goto("/");
   await page.getByRole("link", { name: "Add/Remove Elements" }).click();
 
   const addButtons = page.getByRole("button", { name: "Add Element" });
