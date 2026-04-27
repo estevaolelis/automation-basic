@@ -21,8 +21,8 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     httpCredentials: {
-      username: process.env.USER_AUTH!,
-      password: process.env.PASS_AUTH!,
+      username: process.env.USER_AUTH || "",
+      password: process.env.PASS_AUTH || "",
     }
   },
 
