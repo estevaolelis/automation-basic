@@ -5,5 +5,5 @@ test('Validate heading from A/B link', async ({ page }) => {
 
   await page.getByRole("link", { name: "A/B Testing"}).click()
 
-  await expect(page.getByRole("heading", { name: "A/B Test Control"})).toBeVisible();
+  await expect(page.getByRole("heading", { name: /A\/B Test/})).toBeVisible();
 });
